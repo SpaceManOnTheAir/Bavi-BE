@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.dao.ItemRepository;
-import com.example.demo.dao.SubCategoryRepository;
 import com.example.demo.entity.MainCategory;
-import com.example.demo.entity.SubCategory;
 import com.example.demo.model.ErrorDetails;
 import com.example.demo.service.MainService;
 import com.example.demo.service.SubCategoryService;
