@@ -1,7 +1,7 @@
 package com.example.demo.entity;
 
-import java.sql.Date;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -17,7 +17,6 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.example.demo.dto.OrderDto;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @javax.persistence.Table(name="_order")
@@ -65,8 +64,8 @@ public class Order {
 		super();
 		this.order_no = orderDto.getOrder_no();
 		
-		java.util.Date TODAY=  DateUtils.truncate(new java.util.Date() , Calendar.DAY_OF_MONTH);
-		orderDto.setOrder_date(order_date);
+		Date TODAY=  DateUtils.truncate(new Date() , Calendar.DAY_OF_MONTH);
+		orderDto.setOrder_date(TODAY);
 		this.order_date = orderDto.getOrder_date();
 		this.table_id = table_id;
 	}
