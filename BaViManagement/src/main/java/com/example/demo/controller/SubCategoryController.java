@@ -40,7 +40,7 @@ public class SubCategoryController {
 	@Autowired
 	private SubCategoryService subService;
 
-	// GET A LIST OF SUB CATEGORY BY MAIN CATEGORY
+	// GET A LIST OF SUB CATEGORY BY MAIN CATEGORY ID
 	@GetMapping("subCategories/{idMain}")
 	public List<SubCategory> listAllCategory(@PathVariable("idMain") Integer idMain) {
 		return mainService.getAllSub(idMain);
@@ -54,7 +54,7 @@ public class SubCategoryController {
 
 	// CREATE A SUB CATEGORY
 	@PostMapping(value = "subCategory", consumes = "application/json")
-	public SubCategory createASubCategory(@PathVariable("idMain") int idMain,@RequestBody SubDto aSub, BindingResult result) {
+	public SubCategory createASubCategory(@RequestBody SubDto aSub, BindingResult result) {
 		if (result.hasErrors())
 			throw new IllegalArgumentException("Invalid data SUB CATEGORY");
 		System.out.println(aSub);

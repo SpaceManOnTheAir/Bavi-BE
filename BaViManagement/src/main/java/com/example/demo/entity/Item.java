@@ -27,7 +27,7 @@ public class Item {
 	@Column(name = "item_description", nullable = false)
 	private String description;
 
-	@Column(name = "item_price", nullable = false)
+	@Column(name = "item_price", nullable = true)
 	private Double price;
 
 	@ManyToOne
